@@ -24,12 +24,16 @@ public class WebScraper {
     }
     public static void main(String[] args) {
         String text = urlToString("http://erdani.com/tdpl/hamlet.txt");
-        int wordcountofking = 0;
-        Pattern a = Pattern.compile("king");
+        int wordcountofprince = 0;
+        Pattern a = Pattern.compile("prince");
         Matcher b = a.matcher(text);
-        while (b.find()) {
-            wordcountofking++;
+        Pattern aa = Pattern.compile("Prince");
+        Matcher bb = aa.matcher(text);
+        while (b.find() || bb.find()) {
+            wordcountofprince++;
         }
-        System.out.println(wordcountofking);
+        System.out.println(wordcountofprince);
+        int wordcountofuniqueword = 0;
+        
     }
 }
